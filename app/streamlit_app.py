@@ -43,10 +43,19 @@ input_df = pd.DataFrame([{
     # Add more fields as needed based on your model
 }])
 
-if st.button("Predict Strength"):
-    carbon_pred, carbon_std = predict_with_uncertainty(rf_carbon, input_df)
-    augmented_input = np.hstack([input_df.to_numpy(), carbon_pred[:, None], carbon_std[:, None]])
-    strength_pred = rf_strength.predict(augmented_input)
+total_pct = cement + water + gravel + sand
+st.write(f"**Total: {total_pct:.1f}%**")
 
-    st.success(f"Predicted compressive strength: **{strength_pred[0]:.2f} MPa**")
-    st.caption(f"(Intermediate: carbonation = {carbon_pred[0]:.2f} ± {carbon_std[0]:.2f})")
+# Conditional button
+if abs(total_pct - 100) > 0.01:
+    st.error("Total must add up to 100%. Adjust your inputs.")
+    st.stop()
+else:
+    if st.button("Predict Strength"):
+        st.success("Inputs valid. Running prediction...")
+        carbon_pred, carbon_std = predict_with_uncertainty(rf_carbon, input_df)
+        augmented_input = np.hstack([input_df.to_numpy(), carbon_pred[:, None], carbon_std[:, None]])
+        strength_pred = rf_strength.predict(augmented_input)
+
+        st.success(f"Predicted compressive strength: **{strength_pred[0]:.2f} MPa**")
+        st.caption(f"(Intermediate: carbonation = {carbon_pred[0]:.2f} ± {carbon_std[0]:.2f})")

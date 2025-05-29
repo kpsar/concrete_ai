@@ -27,20 +27,19 @@ st.title("Concrete Strength Predictor")
 st.write("Enter concrete mix proportions to predict compressive strength.")
 
 # Example input form — customize based on your dataset
-cement = st.number_input("Cement (kg/m³)", 100, 600, 350)
-water = st.number_input("Water (kg/m³)", 100, 300, 180)
-gravel = st.number_input("Gravel (kg/m³)", 800, 1200, 1050)
-sand = st.number_input("Sand (kg/m³)", 400, 900, 650)
+cement = st.number_input("Cement [%]", 7, 20, 12)
+water = st.number_input("Water [%]", 5, 15, 7)
+gravel = st.number_input("Gravel [%]", 40, 60, 50)
+sand = st.number_input("Sand [%]", 20, 40, 30)
 fly_ash = st.number_input("Fly Ash (kg/m³)", 0, 150, 50)
 preconditioning_time = st.number_input("Preconditioning Time (days)", 5, 150, 20)
 
 # Build input DataFrame
 input_df = pd.DataFrame([{
-    'cement': cement,
-    'water': water,
-    'gravel': gravel,
-    'sand': sand,
-    'fly_ash': fly_ash,
+    'cement_per': cement,
+    'water_per': water,
+    'crushed_gravel_per': gravel,
+    'sharp_sand_per': sand,
     'preconditioning_time': preconditioning_time
     # Add more fields as needed based on your model
 }])

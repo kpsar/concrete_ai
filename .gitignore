@@ -1,5 +1,7 @@
 # data
 datasets/
+# models
+models/
 
 # Node.js
 node_modules/

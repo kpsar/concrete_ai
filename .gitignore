@@ -1,0 +1,105 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.env
+.venv/
+env/
+venv/
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+*.log
+
+# C / C++
+*.out
+*.o
+*.obj
+*.exe
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# Logs
+*.log
+logs/
+log/
+
+# Environment files
+.env
+.env.*
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Rust
+/target/
+**/*.rs.bk
+
+# Go
+/bin/
+/pkg/
+*.exe
+
+# PHP
+/vendor/
+composer.lock
+
+# Ruby
+*.gem
+*.rbc
+.bundle/
+vendor/bundle
+log/*.log
+tmp/
+
+# Dotenv
+.env
+
+# Others
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Git
+*.orig
+*.patch
+*.rej
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Test output
+test-output/
+junit-report.xml

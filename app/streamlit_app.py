@@ -4,11 +4,16 @@ import numpy as np
 import joblib
 import os
 
-model1_path = os.path.join(os.path.dirname(__file__), "layer1_rf_carbon.pkl")
-model2_path = os.path.join(os.path.dirname(__file__), "layer2_rf_strength.pkl")
-# Load models
-rf_carbon = joblib.load(model1_path)
-rf_strength = joblib.load(model2_path)
+# Get the directory this script is running from (i.e., /app)
+HERE = os.path.dirname(__file__)
+
+# Build paths to the model files
+carbon_model_path = os.path.join(HERE, "layer1_rf_carbon.pkl")
+strength_model_path = os.path.join(HERE, "layer2_rf_strength.pkl")
+
+# Load the models
+rf_carbon = joblib.load(carbon_model_path)
+rf_strength = joblib.load(strength_model_path)
 
 # Predict with uncertainty from Layer 1
 def predict_with_uncertainty(rf_model, X_input):

@@ -2,10 +2,13 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+import os
 
+model1_path = os.path.join(os.path.dirname(__file__), "layer1_rf_carbon.pkl")
+model2_path = os.path.join(os.path.dirname(__file__), "layer2_rf_strength.pkl")
 # Load models
-rf_carbon = joblib.load("layer1_rf_carbon.pkl")
-rf_strength = joblib.load("layer2_rf_strength.pkl")
+rf_carbon = joblib.load(model1_path)
+rf_strength = joblib.load(model2_path)
 
 # Predict with uncertainty from Layer 1
 def predict_with_uncertainty(rf_model, X_input):

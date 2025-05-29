@@ -28,7 +28,7 @@ st.write("Enter concrete mix proportions to predict compressive strength.")
 
 # Example input form — customize based on your dataset
 cement = st.number_input("Cement [%]", 7, 20, 12)
-water = st.number_input("Water [%]", 5, 15, 7)
+water = st.number_input("Water [%]", 5, 15, 8)
 gravel = st.number_input("Gravel [%]", 40, 60, 50)
 sand = st.number_input("Sand [%]", 20, 40, 30)
 preconditioning_time = st.number_input("Preconditioning Time (days)", 5, 150, 20)

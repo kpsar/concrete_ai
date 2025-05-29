@@ -31,7 +31,6 @@ cement = st.number_input("Cement [%]", 7, 20, 12)
 water = st.number_input("Water [%]", 5, 15, 7)
 gravel = st.number_input("Gravel [%]", 40, 60, 50)
 sand = st.number_input("Sand [%]", 20, 40, 30)
-fly_ash = st.number_input("Fly Ash (kg/m³)", 0, 150, 50)
 preconditioning_time = st.number_input("Preconditioning Time (days)", 5, 150, 20)
 
 # Build input DataFrame
